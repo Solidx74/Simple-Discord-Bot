@@ -173,6 +173,37 @@ async def serverinfo(ctx):
     await ctx.send(embed=embed)
 
 
+# ---------- SHOW ALL COMMANDS ----------
+@bot.command()
+async def commands(ctx):
+    embed = discord.Embed(title="RibBot Commands", description="Here are all the commands you can use:", color=0x00ffcc)
+
+    # Simple commands
+    embed.add_field(name="$hello", value="Say hello to RibBot.", inline=False)
+    embed.add_field(name="$sup", value="Check how RibBot is doing.", inline=False)
+    embed.add_field(name="$reply", value="RibBot replies to you.", inline=False)
+    embed.add_field(name="$dm <message>", value="RibBot will DM you the message.", inline=False)
+
+    # Role commands
+    embed.add_field(name="$assign", value="Assign yourself the 'Random' role.", inline=False)
+    embed.add_field(name="$remove", value="Remove the 'Random' role from yourself.", inline=False)
+
+    # Yes/No role commands
+    embed.add_field(name="$cuetian", value="Assign 'CUETian' role if you study at CUET.", inline=False)
+    embed.add_field(name="$crypto", value="Assign 'Crypto' role if you are interested in crypto.", inline=False)
+
+    # Secret command
+    embed.add_field(name="$secret", value="Secret command for users with 'Crypto' role.", inline=False)
+
+    # Poll command
+    embed.add_field(name="$poll <question>", value="Create a yes/no poll with your question.", inline=False)
+
+    # Info commands
+    embed.add_field(name="$userinfo [member]", value="Get info about a user or yourself.", inline=False)
+    embed.add_field(name="$serverinfo", value="Get info about the server.", inline=False)
+
+    # Send embed
+    await ctx.send(embed=embed)
 
 
 # ---------- RUN BOT ----------
